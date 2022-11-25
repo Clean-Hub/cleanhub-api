@@ -1,6 +1,21 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import cors from 'cors'
+
+// cors solution established
+const corsOption = {
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+}
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+}
 
 const app = express()
 dotenv.config()
@@ -19,6 +34,7 @@ mongoose.connection.on('disconnected', () => {
 
 // Middlewares
 app.use(express.json())
+app.use(cors(corsOptions))
 
 app.get('/', (req, res) => {
   return res.status(200).json({ msg: 'You are welcome to CleanHub API' })
