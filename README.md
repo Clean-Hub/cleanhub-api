@@ -23,12 +23,14 @@
 
 - Node.js
 - Expressjs
+- Cors
 - Mongodb
 - Mongoose
 - Dotenv
 - Nodemon
 - JWT
 - Bcrypt
+- Joi
 
 ---
 
