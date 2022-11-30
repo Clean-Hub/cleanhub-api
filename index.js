@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cors from 'cors'
+import authRoute from './routes/auth.js'
 
 // cors solution established
 const corsOption = {
@@ -35,6 +36,7 @@ mongoose.connection.on('disconnected', () => {
 // Middlewares
 app.use(express.json())
 app.use(cors(corsOptions))
+app.use('/api/auth', authRoute)
 
 app.get('/', (req, res) => {
   return res.status(200).json({ msg: 'You are welcome to CleanHub API' })
