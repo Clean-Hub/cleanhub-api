@@ -39,7 +39,7 @@ app.use(cors(corsOptions))
 app.use('/api/auth', authRoute)
 
 app.get('/', (req, res) => {
-  return res.status(200).json({ msg: 'You are welcome to CleanHub API' })
+  return res.status(200).json({ msg: 'You are welcome to CleanHub API for recyclables ' })
 })
 
 app.listen(PORT, () => {
