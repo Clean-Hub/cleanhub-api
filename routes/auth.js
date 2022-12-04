@@ -1,8 +1,8 @@
-import User from '../models/User'
 import express from 'express'
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import Joi from 'joi'
+import User from '../models/User.js'
 
 const router = express.Router()
 
