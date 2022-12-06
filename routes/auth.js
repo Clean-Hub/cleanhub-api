@@ -13,6 +13,11 @@ router.post('/register', async (req, res) => {
       lastName: Joi.string().min(3).max(30).required(),
       email: Joi.string().min(3).max(30).required().email(),
       password: Joi.string().min(6).max(200).required(),
+      phone: Joi.string()
+        .length(11)
+        .pattern(/^[0-9]+$/)
+        .required(),
+      agreement: Joi.boolean().required(),
       isAdmin: Joi.boolean(),
     })
     const { error } = schema.validate(req.body)
@@ -29,6 +34,8 @@ router.post('/register', async (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email,
       password: hash,
+      phone: req.body.phone,
+      agreement: req.body.agreement,
       isAdmin: req.body.isAdmin,
     })
     await user.save()
