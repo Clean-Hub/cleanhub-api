@@ -14,6 +14,7 @@ const UserSchema = mongoose.Schema(
     password: { type: String, minlength: 3, maxlength: 1024, required: true },
     phone: { type: String, minlength: 11, maxlength: 15, required: true },
     agreement: { type: Boolean, default: false, required: true },
+    rememberMe: { type: Boolean, default: false, required: true },
     isAdmin: { type: Boolean, default: false },
   },
   { timestamps: true }
