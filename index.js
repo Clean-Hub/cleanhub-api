@@ -8,12 +8,12 @@ import authRoute from './routes/auth.js'
 const corsOption = {
   origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  preflightContinue: false,
+  preflightContinue: true,
   optionsSuccessStatus: 204,
 }
 
 const corsOptions = {
-  origin: 'https://cleanhub.netlify.app/',
+  origin: 'https://cleanhub.netlify.app',
   // origin: 'http://localhost:3000',
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
